@@ -1,6 +1,10 @@
-## Password Strength Analyzer
+# Password Strength Analyzer
 
-This is a simple web-based password strength analyzer built with HTML, CSS, and JavaScript. It provides real-time feedback on password strength based on character types, patterns, and common dictionary words.
+A simple web-based password strength analyzer built with HTML, CSS, and JavaScript. Provides real-time feedback on password strength based on character types, patterns, and common dictionary words.
+
+## Live Demo
+
+Hosted on GitHub Pages: https://cipolettig.github.io/password-analyzer/
 
 ## Features
 
@@ -8,6 +12,7 @@ This is a simple web-based password strength analyzer built with HTML, CSS, and 
 - **Scoring System**: Based on length, character diversity, and penalties for weak patterns.
 - **Privacy-Focused**: All processing happens in the browser; no data is sent or stored.
 - **Responsive Design**: Works on different screen sizes.
+- **Hold-to-Reveal**: Click and hold the eye icon to temporarily view your password.
 
 ## Scoring Rules
 
@@ -36,48 +41,54 @@ This is a simple web-based password strength analyzer built with HTML, CSS, and 
 
 ## Files
 
-- `PasswordAnalyzer.html`: The main HTML page.
+- `index.html`: The main HTML page.
 - `PasswordAnalyzer.css`: Styles for the page.
 - `ScoringFunction.js`: Contains the `analyzePassword` function that calculates score and feedback.
 - `Interactions.js`: Handles user input events and updates the UI.
 
 ## How to Run
 
-1. Open `PasswordAnalyzer.html` in a web browser.
-2. Type a password in the input field.
-3. See the strength label and feedback list update in real-time.
+### Locally
+1. Download or clone the repository.
+2. Open `index.html` in a web browser.
+3. Type a password in the input field.
+4. See the strength label and feedback list update in real-time.
 
-For hosting online, you can use Node.js with Express or Apache Tomcat.
+### Hosted
+Visit the live demo link (https://cipolettig.github.io/password-analyzer/). No installation needed.
 
 ## Miscellaneous Notes
 
-Inspired by the University of Illinois Password Meter (https://www.uic.edu/apps/strong-password/) and the zxcvbn library.
+Inspired by the University of Illinois Password Meter (https://www.uic.edu/apps/strong-password/) and the zxcvbn library (loaded via CDN).
 
-AI was used to develop bits and pieces of code, not entire pages. This was mostly done for algorithms that I had conceptual ideas for but no clue how to create them, and stack overflow could not provide applicable or related advice. E.g. I had no idea how to script the algorithm involving regex and penalizing/rewarding certain characters, nor how to add the zxcvbn library.
-
+AI was used to develop bits and pieces of code, not entire pages. This was mostly done for algorithms that I had conceptual ideas for but no clue how to create them, and Stack Overflow could not provide applicable or related advice. E.g. I had no idea how to script the algorithm involving regex and penalizing/rewarding certain characters, nor how to add the zxcvbn library.
 
 ## Patch Notes
 
-### v1.2 
+### v1.3
+- Redesigned UI: warm light gray background, card layout, DM Sans + DM Mono fonts
+- Feedback items now color-coded with green/red/amber pill styling instead of emojis
+- Added animated strength progress bar
+- Added hold-to-reveal eye icon button on the password input
+- Hosted on GitHub Pages
+- Renamed `PasswordAnalyzer.html` to `index.html` for GitHub Pages compatibility
+
+### v1.2
 - Added zxcvbn library via CDN for deeper password analysis (detects l33t speak, common names, dates, patterns, etc.)
 - zxcvbn's 0-4 score is now blended into the overall score as a point adjustment
 - Replaced overly personal zxcvbn date suggestion with a vaguer "Avoid using predictable numbers or patterns"
 - Fixed feedback showing on empty input — no feedback is displayed until the user starts typing
-- Fixed short passwords only showing positive feedback — missing character types now show 💡 tip messages regardless of length
+- Fixed short passwords only showing positive feedback — missing character types now show tip messages regardless of length
 
-### v1.1 
+### v1.1
 - Softened penalties: repeated chars -10 → -5, sequences -10 → -5 each (capped at -15), dictionary words -20 → -10 each (capped at -20)
 - Character type bonuses now only apply if password is 8+ characters
 - Multiple sequence and dictionary word penalties now stack (up to their caps) instead of only penalizing once
 - Raised strength thresholds: Bad 0-24, Okay 25-44, Great 45+
-- Replaced point numbers in feedback with ✅ / ❌ / 💡 icons
+- Replaced point numbers in feedback with icons
 
-### v1.0 
+### v1.0
 - Basic scoring system with length, character type, sequence, and dictionary checks
 - Real-time feedback via input event listener
 - Barebones HTML and CSS created to start creation of score algorithm
 - Barebones interactions coded
-
-## TO DO LIST:
-
-- after function is completed, finish css/html and make page look more intriguing and interactive
