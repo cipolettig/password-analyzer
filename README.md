@@ -69,7 +69,7 @@ AI was used to develop bits and pieces of code, not entire pages. This was mostl
 
 ### v1.4
 - Spaces are now blocked from being typed into the input entirely
-- ScoringFunction also strips any spaces before analysis as a safeguard
+- `ScoringFunction.js` also strips any spaces before analysis as a safeguard
 - Scoring rules updated to reflect that length is measured without spaces
 
 ### v1.3
