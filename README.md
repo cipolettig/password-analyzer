@@ -16,7 +16,9 @@ Hosted on GitHub Pages: https://cipolettig.github.io/password-analyzer/
 
 ## Scoring Rules
 
-- **Length**:
+- **Spaces**: Not allowed or counted — the input blocks them entirely.
+
+- **Length** (spaces excluded):
   - <8 characters: 0 points
   - 8-11 characters: +10 points
   - 12-15 characters: +20 points
@@ -64,6 +66,11 @@ Inspired by the University of Illinois Password Meter (https://www.uic.edu/apps/
 AI was used to develop bits and pieces of code, not entire pages. This was mostly done for algorithms that I had conceptual ideas for but no clue how to create them, and Stack Overflow could not provide applicable or related advice. E.g. I had no idea how to script the algorithm involving regex and penalizing/rewarding certain characters, nor how to add the zxcvbn library.
 
 ## Patch Notes
+
+### v1.4
+- Spaces are now blocked from being typed into the input entirely
+- ScoringFunction also strips any spaces before analysis as a safeguard
+- Scoring rules updated to reflect that length is measured without spaces
 
 ### v1.3
 - Redesigned UI: warm light gray background, card layout, DM Sans + DM Mono fonts

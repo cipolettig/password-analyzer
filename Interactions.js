@@ -23,6 +23,11 @@ function classifyFeedback(text) {
 const barWidths = { bad: '28%', okay: '62%', great: '100%' };
 const barColors = { bad: '#d94f3d', okay: '#e0a020', great: '#3a9e68' };
 
+// Block spaces from being entered in the input
+passwordInput.addEventListener('keydown', (e) => {
+    if (e.key === ' ') e.preventDefault();
+});
+
 // Hold-to-reveal password button
 const revealBtn = document.getElementById('revealBtn');
 

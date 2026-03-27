@@ -5,6 +5,9 @@
 
 function analyzePassword(password)
 {
+    // Strip all spaces — spaces are not counted or scored
+    password = password.replace(/\s/g, '');
+
     let score = 0; // Total score starts at 0
     let feedback = []; // Array to hold feedback messages
 
